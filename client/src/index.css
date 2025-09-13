@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Georgia:wght@400;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0 0% 100%);
+  --foreground: hsl(222 47% 11%);
+  --card: hsl(0 0% 100%);
+  --card-foreground: hsl(222 47% 11%);
+  --popover: hsl(0 0% 100%);
+  --popover-foreground: hsl(222 47% 11%);
+  --primary: hsl(210 100% 40%);
+  --primary-foreground: hsl(0 0% 98%);
+  --secondary: hsl(210 40% 96%);
+  --secondary-foreground: hsl(222 47% 11%);
+  --muted: hsl(210 40% 96%);
+  --muted-foreground: hsl(215 16% 46%);
+  --accent: hsl(210 40% 96%);
+  --accent-foreground: hsl(222 47% 11%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(214 32% 91%);
+  --input: hsl(214 32% 91%);
+  --ring: hsl(210 100% 40%);
+  --chart-1: hsl(210 100% 40%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(210 40% 96%);
+  --sidebar-foreground: hsl(222 47% 11%);
+  --sidebar-primary: hsl(210 100% 40%);
+  --sidebar-primary-foreground: hsl(0 0% 98%);
+  --sidebar-accent: hsl(210 40% 96%);
+  --sidebar-accent-foreground: hsl(222 47% 11%);
+  --sidebar-border: hsl(214 32% 91%);
+  --sidebar-ring: hsl(210 100% 40%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --cringe-low: hsl(174 72% 56%);
+  --cringe-high: hsl(4 86% 70%);
+}
+
+.dark {
+  --background: hsl(222 47% 11%);
+  --foreground: hsl(213 31% 91%);
+  --card: hsl(222 35% 15%);
+  --card-foreground: hsl(213 31% 91%);
+  --popover: hsl(222 47% 11%);
+  --popover-foreground: hsl(213 31% 91%);
+  --primary: hsl(210 100% 50%);
+  --primary-foreground: hsl(222 47% 11%);
+  --secondary: hsl(222 35% 20%);
+  --secondary-foreground: hsl(213 31% 91%);
+  --muted: hsl(222 35% 20%);
+  --muted-foreground: hsl(215 20% 65%);
+  --accent: hsl(222 35% 20%);
+  --accent-foreground: hsl(213 31% 91%);
+  --destructive: hsl(0 84% 60%);
+  --destructive-foreground: hsl(0 0% 98%);
+  --border: hsl(222 35% 20%);
+  --input: hsl(222 35% 20%);
+  --ring: hsl(210 100% 50%);
+  --chart-1: hsl(210 100% 50%);
+  --chart-2: hsl(159.7826 100% 36.0784%);
+  --chart-3: hsl(42.0290 92.8251% 56.2745%);
+  --chart-4: hsl(147.1429 78.5047% 41.9608%);
+  --chart-5: hsl(341.4894 75.2000% 50.9804%);
+  --sidebar: hsl(222 35% 15%);
+  --sidebar-foreground: hsl(213 31% 91%);
+  --sidebar-primary: hsl(210 100% 50%);
+  --sidebar-primary-foreground: hsl(222 47% 11%);
+  --sidebar-accent: hsl(222 35% 20%);
+  --sidebar-accent-foreground: hsl(213 31% 91%);
+  --sidebar-border: hsl(222 35% 20%);
+  --sidebar-ring: hsl(210 100% 50%);
+  --font-sans: 'Inter', sans-serif;
+  --font-serif: 'Georgia', serif;
+  --font-mono: Menlo, monospace;
+  --radius: 0.5rem;
+  --cringe-low: hsl(174 72% 56%);
+  --cringe-high: hsl(4 86% 70%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer components {
+  .highlight-cringe {
+    @apply bg-red-100 dark:bg-red-900/30 px-1 py-0.5 rounded border-b-2 border-red-400;
+  }
+
+  .confetti-piece {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    pointer-events: none;
+  }
+
+  .cringe-meter-fill {
+    transition: width 2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  }
+
+  .toast-enter {
+    transform: translateX(100%);
+  }
+
+  .toast-enter-active {
+    transform: translateX(0);
+    transition: transform 0.3s ease-out;
+  }
+
+  .toast-exit {
+    transform: translateX(0);
+  }
+
+  .toast-exit-active {
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in;
+  }
+}
+
+@layer utilities {
+  .animate-bounce-in {
+    animation: bounceIn 0.6s ease-out;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+
+  .animate-confetti {
+    animation: confetti 1s ease-out forwards;
+  }
+
+  .animate-cringe-fill {
+    animation: cringeFill 2s ease-out;
+  }
+
+  .animate-pulse-slow {
+    animation: pulse 2s infinite;
+  }
+}
+
+@keyframes bounceIn {
+  0% { 
+    transform: scale(0.3); 
+    opacity: 0; 
+  }
+  50% { 
+    transform: scale(1.05); 
+  }
+  70% { 
+    transform: scale(0.9); 
+  }
+  100% { 
+    transform: scale(1); 
+    opacity: 1; 
+  }
+}
+
+@keyframes slideUp {
+  0% { 
+    transform: translateY(20px); 
+    opacity: 0; 
+  }
+  100% { 
+    transform: translateY(0); 
+    opacity: 1; 
+  }
+}
+
+@keyframes confetti {
+  0% { 
+    transform: scale(0) rotate(0deg); 
+    opacity: 1; 
+  }
+  100% { 
+    transform: scale(1) rotate(360deg); 
+    opacity: 0; 
+  }
+}
+
+@keyframes cringeFill {
+  0% { 
+    width: 0%; 
+  }
+  100% { 
+    width: var(--target-width); 
+  }
+}
+
+@keyframes spin {
+  0% { 
+    transform: rotate(0deg); 
+  }
+  100% { 
+    transform: rotate(360deg); 
+  }
+}

@@ -1,0 +1,58 @@
+Build a web app called "CringeIn - LinkedIn Post Cringe Checker" that analyzes LinkedIn posts for cringe level.
+Core Functionality:
+
+Large textarea for pasting LinkedIn posts (max 3000 chars)
+Analyze button that triggers cringe analysis
+Returns overall cringe score (0-100%) with animated progress bar
+Shows breakdown of cringe factors detected
+"Decringe" button that rewrites the post to be less cringe
+
+Cringe Detection Rules:
+Score posts for these patterns:
+
+"Agree? Thoughts?" ending (+15 points)
+"I'm humbled to announce" (+20 points)
+Random line breaks for emphasis (+10 points)
+Excessive emojis 🚀💪✨ (+5 per emoji over 2)
+"Let that sink in" (+15 points)
+Fake vulnerable story that ends with job success (+25 points)
+#Blessed #Grateful #Journey hashtags (+10 each)
+"I usually don't post but..." (+10 points)
+Crying/emotional reaction description (+20 points)
+"My team isn't just employees, they're family" (+15 points)
+
+UI Design:
+
+Colors: Navy blue (#0A66C2) header, white background, red-orange (#FF6B6B) for high cringe, green (#4ECDC4) for low cringe
+Font: Inter for UI, Georgia for analyzed post display
+Layout: Single column, centered, max-width 600px
+Animated cringe meter that fills up dramatically
+Confetti animation for 90%+ cringe scores
+
+Results Display:
+Show:
+
+Big score with sarcastic label (0-20%: "Actually Normal", 21-50%: "Mildly Corporate", 51-75%: "Peak LinkedIn", 76-100%: "Viral Cringe Material")
+List of detected cringe patterns with examples highlighted
+Shareable result card with score
+"Try to Beat This Score" challenge button
+
+Extra Features:
+
+"Hall of Cringe" - Preset examples of maximum cringe posts
+Copy button for decringe version
+Share score to Twitter button with pre-filled text
+Dark mode toggle
+
+Technical Requirements:
+
+Pure client-side JavaScript (no backend needed)
+Mobile responsive
+Smooth animations with CSS transitions
+Save last 5 analyzed posts in localStorage
+Add subtle sound effect when score appears (optional toggle)
+
+Landing Page Copy:
+Headline: "Is Your LinkedIn Post Cringe?"
+Subtext: "Find out before your network does"
+Make it fun, sarcastic, and shareable. The whole vibe should be playful mockery of LinkedIn culture.
